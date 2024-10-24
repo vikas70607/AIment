@@ -69,13 +69,15 @@ h6 {
 /* --------------------------------
 # Pop Ups
  ----------------------------------*/
- .popup-card {
+ /* Popup card styling */
+.popup-card {
   display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;
+  width: 80vw;  /* Responsive width */
+  max-width: 400px;  /* Limit maximum width */
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -88,10 +90,11 @@ h6 {
 .popup-card h2 {
   margin-top: 0;
   color: #333;
+  font-size: 1.5rem; /* Responsive font size */
 }
 
 .popup-card p {
-  font-size: 16px;
+  font-size: 1rem; /* Slightly smaller text */
   color: #555;
 }
 
@@ -104,6 +107,7 @@ h6 {
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
+  font-size: 1rem;
 }
 
 /* Dark overlay background */
@@ -117,6 +121,28 @@ h6 {
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
+
+/* Media queries for smaller screens */
+@media (max-width: 600px) {
+  .popup-card {
+    width: 90vw; /* Adjust width for smaller screens */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .popup-card h2 {
+    font-size: 1.25rem; /* Smaller font size for headings */
+  }
+
+  .popup-card p {
+    font-size: 0.9rem; /* Smaller font size for paragraph */
+  }
+
+  .close-btn {
+    padding: 8px; /* Adjust padding for smaller screens */
+    font-size: 0.9rem; /* Adjust button font size */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Preloader
