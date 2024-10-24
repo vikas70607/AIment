@@ -86,6 +86,15 @@ h6 {
   z-index: 1000;
 }
 
+/* Popup image styling */
+.popup-image {
+  width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Match card's border radius */
+  margin-bottom: 15px; /* Spacing below the image */
+}
+
+
 /* Popup card content */
 .popup-card h2 {
   margin-top: 0;
@@ -100,7 +109,7 @@ h6 {
 
 /* Close button styling */
 .close-btn {
-  background-color: rgb(255, 50, 50);
+  background-color: #513EEF;
   color: white;
   border: none;
   padding: 10px;

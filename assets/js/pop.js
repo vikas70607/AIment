@@ -3,7 +3,7 @@ setTimeout(function() {
     document.getElementById('overlay').style.display = 'block';
 
     document.body.style.overflow = 'hidden';
-}, 15000); // 15 seconds delay
+}, 5000); // 15 seconds delay
 
 // Function to close popup
 function closePopup() {
