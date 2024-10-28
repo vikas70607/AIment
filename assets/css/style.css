@@ -115,9 +115,12 @@ h6 {
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: 10px auto; /* Center horizontally */
   font-size: 1rem;
+  display: block; /* Ensures it takes full width and is on its own line */
+  width: fit-content; /* Ensures the button only takes up necessary space */
 }
+
 
 /* Dark overlay background */
 .overlay {
