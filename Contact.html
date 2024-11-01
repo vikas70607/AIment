@@ -26,6 +26,14 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <style>
+    @media (max-width: 768px) {
+      .container {
+          flex-direction: column;
+      }
+  }
+  </style>
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -85,7 +93,6 @@
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
         <div class="d-flex justify-content-between align-items-center">
           <h2>Contact Us</h2>
           <ol>
@@ -98,10 +105,9 @@
 
     <section class="inner-page">
       <div class="container" style="display: flex; flex-wrap: wrap; align-items: center;">
-
         <!-- Company Logo and Description -->
         <div class="company-info" style="flex: 1; padding: 20px;">
-          <img src="logo.png" alt="Company Logo" style="max-width: 100%; height: auto;">
+          <img src="assets/img/logo.png" alt="Company Logo" style="max-width: 100%; height: auto; filter:invert(1)">
           <p style="margin-top: 10px;">
             Our company is dedicated to providing the best service possible. Please fill out the form, and we'll get in
             touch shortly.
