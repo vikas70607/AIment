@@ -78,12 +78,17 @@ button:hover{
 # Contact form
  ----------------------------------*/
 
+label {
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
  .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-  padding: 8px 0;
+  padding: 0px 8px 0px 0px;
   border: none;
   border-bottom: 2px solid #ddd;
   background-color: transparent;
@@ -91,6 +96,10 @@ button:hover{
   color: #333;
   outline: none;
   transition: border-color 0.3s ease;
+}
+
+#project {
+  border: 2px solid #ddd
 }
 
 .contact-form input[type="text"]:focus,
@@ -1577,8 +1586,8 @@ section {
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
-  padding: 15px 0;
-  background: #e0ddff;
+  padding: 5px 0;
+  background: linear-gradient(45deg, rgba(211, 204, 255, 0.9) 0%, rgba(209, 162, 255, 0.9) 100%);
   min-height: 40px;
   margin-top: 85px;
 }
