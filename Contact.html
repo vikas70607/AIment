@@ -107,22 +107,22 @@
     <section class="inner-page">
       <div class="container-two" style="display: flex; flex-wrap: wrap; align-items: center;">
         <!-- Company Logo and Description -->
-        <div class="company-info" style="flex: 1; padding: 20px;">
+        <div class="company-info" style="flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center;">
           <img src="assets/img/logo.png" alt="Company Logo" style="max-width: 100%; height: auto; filter:invert(1)">
           <p style="margin-top: 10px;">
             Alternatively, you can also mail your requirements at <a href="mailto:support@aiment.in">support@aiment.in</a>
           </p>
         </div>
-
+    
         <!-- Contact Form -->
         <div class="contact-form" style="flex: 1; padding: 20px;">
-          <form  id="contactForm" style="display: flex; flex-direction: column; gap: 10px;">
+          <form id="contactForm" style="display: flex; flex-direction: column; gap: 10px;">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
-
+    
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
-
+    
             <label for="budget">Budget</label>
             <select id="budget" name="budget" required>
               <option value="" disabled selected style="color: #888;">Select your budget</option>
@@ -131,18 +131,16 @@
               <option value="5000-10000">$500</option>
               <option value="over-10000">Over $1000</option>
             </select>
-
-
+    
             <label for="project">Project Description</label>
             <textarea id="project" name="project" rows="4" required></textarea>
-
-            <button type="submit"
-              style="padding: 10px; background-color: #5846f9; color: #ffffff; border: none; cursor: pointer;">Submit</button>
+    
+            <button type="submit" style="padding: 10px; background-color: #5846f9; color: #ffffff; border: none; cursor: pointer;">Submit</button>
           </form>
         </div>
-
       </div>
-    </section><!-- End Inner Page -->
+    </section>
+    <!-- End Inner Page -->
 
   </main><!-- End #main -->
 
