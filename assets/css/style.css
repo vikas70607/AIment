@@ -1799,3 +1799,53 @@ section {
   color: #fff;
   text-decoration: none;
 }
+.logo-slider {
+  background-color: #fff;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.logo-slider .logos {
+  display: inline-flex;
+  animation: scroll 25s linear infinite;
+}
+
+.logo-slider .logos img {
+  max-height: 80px;
+  width: 200px;
+  margin: 0 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-slider:before,
+.logo-slider:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+}
+
+.logo-slider:before {
+  left: 0;
+}
+
+.logo-slider:after {
+  right: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 5));
+  }
+}
