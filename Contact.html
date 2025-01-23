@@ -93,48 +93,67 @@
 
 
   <main id="main" class="blogmain">
+    <div class="contact-wrapper">
+      <div class="contact-container">
+          <div class="contact-info">
+              <div class="contact-info-content">
+                  <img src="assets/img/logo.png" alt="AIment Logo">
+                  <h2>Let's Connect</h2>
+                  <p>Have a project in mind? We're excited to hear about it! Share your vision, and let's turn it into reality.</p>
+                  <p style="margin-top: 15px;">📧 support@aiment.in</p>
+              </div>
+          </div>
+          <div class="contact-form">
+              <div class="progress-container">
+                  <div class="circle active" data-step="1">1</div>
+                  <div class="circle" data-step="2">2</div>
+              </div>
 
-    <!-- ======= Breadcrumbs ======= -->
-
-    <section class="inner-page">
-      <div class="container-two" style="display: flex; flex-wrap: wrap; align-items: center;">
-        <!-- Company Logo and Description -->
-        <div class="company-info" style="flex: 1; padding: 20px; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <img src="assets/img/logo.png" alt="Company Logo" style="max-width: 100%; height: auto; filter:invert(1)">
-          <p style="margin-top: 10px;">
-            Alternatively, you can also mail your requirements at <a href="mailto:support@aiment.in">support@aiment.in</a>
-          </p>
-        </div>
-    
-        <!-- Contact Form -->
-        <div class="contact-form" style="flex: 1; padding: 20px;">
-          <form id="contactForm" style="display: flex; flex-direction: column; gap: 10px;">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-    
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-    
-            <label for="budget">Budget</label>
-            <select id="budget" name="budget" required>
-              <option value="" disabled selected style="color: #888;">Select your budget</option>
-              <option value="under-1000">Under $100</option>
-              <option value="1000-5000">$200</option>
-              <option value="5000-10000">$500</option>
-              <option value="over-10000">Over $1000</option>
-            </select>
-    
-           
-            <label for="project">Project Description</label>
-            <textarea id="project" name="project" rows="4" required></textarea>
-            <label for="Upload">Upload File</label>
-            <input type="file" id="file" name="file" required>
-            <button type="submit" style="padding: 10px; background-color: #5846f9; color: #ffffff; border: none; cursor: pointer;">Submit</button>
-          </form>
-        </div>
+              <form id="multiStepForm">
+                  <!-- Step 1: Personal Information -->
+                  <div class="form-step active" id="step1">
+                      <h2 style="color: var(--deep-purple); margin-bottom: 30px; text-align: center;">Personal Details</h2>
+                      <div class="form-group">
+                          <label for="name">Full Name</label>
+                          <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Email Address</label>
+                          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                      </div>
+                      <div class="form-navigation">
+                          <button type="button" class="btn" id="nextStep1">Next</button>
+                      </div>
+                  </div>
+                  <div class="form-step" id="step2">
+                      <h2 style="color: var(--deep-purple); margin-bottom: 30px; text-align: center;">Project Inquiry</h2>
+                      <div class="form-group">
+                          <label for="budget">Project Budget</label>
+                          <select id="budget" name="budget" required>
+                              <option value="">Select Budget Range</option>
+                              <option value="under-1000">Under $100</option>
+                              <option value="1000-5000">$200 - $500</option>
+                              <option value="5000-10000">$500 - $1000</option>
+                              <option value="over-10000">Over $1000</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="project">Project Description</label>
+                          <textarea id="project" name="project" rows="4" required placeholder="Describe your project goals and requirements"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="file">Attach Project Files</label>
+                          <input type="file" id="file" name="file" required>
+                      </div>
+                      <div class="form-navigation">
+                          <button type="button" class="btn" id="prevStep2">Previous</button>
+                          <button type="submit" class="btn">Submit Inquiry</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
       </div>
-    </section>
-    <!-- End Inner Page -->
+  </div>
 
   </main><!-- End #main -->
 
@@ -221,7 +240,67 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.getElementById('multiStepForm');
+        const step1 = document.getElementById('step1');
+        const step2 = document.getElementById('step2');
+        const nextStep1 = document.getElementById('nextStep1');
+        const prevStep2 = document.getElementById('prevStep2');
+        const progressCircles = document.querySelectorAll('.circle');
 
+        function changeCircle(currentStep) {
+            progressCircles.forEach(circle => {
+                circle.classList.remove('active', 'completed');
+                if (circle.dataset.step < currentStep) {
+                    circle.classList.add('completed');
+                } else if (circle.dataset.step == currentStep) {
+                    circle.classList.add('active');
+                }
+            });
+        }
+
+        nextStep1.addEventListener('click', function() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+
+            if (nameInput.value.trim() && emailInput.value.trim()) {
+                step1.classList.remove('active');
+                step2.classList.add('active');
+                changeCircle(2);
+            } else {
+                alert('Please fill in both name and email');
+            }
+        });
+
+        prevStep2.addEventListener('click', function() {
+            step2.classList.remove('active');
+            step1.classList.add('active');
+            changeCircle(1);
+        });
+
+        // Allow clicking on progress circles to navigate
+        progressCircles.forEach(circle => {
+            circle.addEventListener('click', function() {
+                const step = this.dataset.step;
+                if (step == 1) {
+                    step1.classList.add('active');
+                    step2.classList.remove('active');
+                    changeCircle(1);
+                } else if (step == 2) {
+                    step2.classList.add('active');
+                    step1.classList.remove('active');
+                    changeCircle(2);
+                }
+            });
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted successfully!');
+        });
+    });
+</script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
