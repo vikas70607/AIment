@@ -50,20 +50,22 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-in">
-    <div class="container d-flex align-items-center justify-content-between">
+  <header id="header" class="fixed-top header-scrolle header-in  ">
+    <div class="container  d-flex align-items-center justify-content-between">
       <!-- <h1 class="logo"><a href="index.html">AIment</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
       <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto " href="/AIment/">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto " href="/AIment/portfolio-details.html">Portfolio</a></li>
+          <li><a class="nav-link scrollto " href="blog.html" >Blogs</a>
+
+          <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -79,9 +81,9 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          </li> -->
+          <li><a class="nav-link scrollto active"  href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="Contact.html">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -89,20 +91,10 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+
+  <main id="main" class="blogmain">
 
     <!-- ======= Breadcrumbs ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Contact Us</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Contact Us</li>
-          </ol>
-        </div>
-      </div>
-    </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
       <div class="container-two" style="display: flex; flex-wrap: wrap; align-items: center;">
@@ -132,9 +124,11 @@
               <option value="over-10000">Over $1000</option>
             </select>
     
+           
             <label for="project">Project Description</label>
             <textarea id="project" name="project" rows="4" required></textarea>
-    
+            <label for="Upload">Upload File</label>
+            <input type="file" id="file" name="file" required>
             <button type="submit" style="padding: 10px; background-color: #5846f9; color: #ffffff; border: none; cursor: pointer;">Submit</button>
           </form>
         </div>
