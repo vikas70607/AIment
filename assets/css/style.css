@@ -1955,7 +1955,7 @@ section {
 
 .logo-slider .logos img {
   max-height: 80px;
-  width: 200px;
+  width: 120px;
   margin: 0 20px;
   object-fit: contain;
   flex-shrink: 0;
