@@ -271,3 +271,24 @@
   new PureCounter();
   
 })()
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#navbar');
+  mobileNavToggle.addEventListener('click', () => {
+    console.log(mobileNavToggle.classList);
+    console.log(navbar.classList);
+    
+  });
+
+
+  const dropdownLinks = document.querySelectorAll('.navbar-mobile .dropdown > a');
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (navbar.classList.contains('navbar-mobile')) {
+        e.preventDefault();
+        link.nextElementSibling.classList.toggle('dropdown-active');
+      }
+    });
+  });
+});

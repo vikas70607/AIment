@@ -592,19 +592,22 @@ button:hover{
 
 /**
 * Mobile Navigation 
-*/
-.mobile-nav-toggle {
-  color: #fff;
+*/.mobile-nav-toggle {
+  color: var(--contrast-color);
   font-size: 28px;
   cursor: pointer;
   display: none;
   line-height: 0;
-  transition: 0.5s;
+  transition: 0.3s;
+  z-index: 1000;
 }
 
 @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
+    position: fixed;
+    right: 20px;
+    top: 20px;
   }
 
   .navbar ul {
@@ -614,61 +617,71 @@ button:hover{
 
 .navbar-mobile {
   position: fixed;
-  overflow: hidden;
   top: 0;
   right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(28, 47, 65, 0.9);
+  width: 280px; /* Reduced width for smaller menu */
+  height: auto;
+  max-height: 80vh; /* Limit height to 80% of viewport */
+  background: var(--surface-color);
+  box-shadow: -2px 0 20px rgba(31, 38, 135, 0.1);
   transition: 0.3s;
   z-index: 999;
-}
-
-.navbar-mobile .mobile-nav-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  border-radius: 12px;
+  margin: 70px 20px 0 0; /* Space from top for hamburger */
+  overflow: hidden;
 }
 
 .navbar-mobile ul {
   display: block;
-  position: absolute;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
-  padding: 10px 0;
-  background-color: #fff;
-  overflow-y: auto;
-  transition: 0.3s;
+  padding: 15px 0;
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  /* overflow-y: auto; */
+  width: 100%;
+  /* max-height: calc(80vh - 70px); */
 }
 
-.navbar-mobile>ul>li {
+.navbar-mobile > ul > li {
   padding: 0;
+  border-bottom: 1px solid rgba(88, 70, 249, 0.1);
+}
+
+.navbar-mobile > ul > li:last-child {
+  border-bottom: none;
 }
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 15px;
-  color: #2c4964;
-}
-
-.navbar-mobile a:hover:before,
-.navbar-mobile li:hover>a:before,
-.navbar-mobile .active:before {
-  visibility: hidden;
+  color: var(--default-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
-  color: #5846f9;
+.navbar-mobile li:hover > a {
+  color: var(--accent-color);
+  background-color: var(--light-purple);
 }
 
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
-  margin: 15px;
+  margin: 15px 20px;
+  padding: 10px 20px;
+  text-align: center;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+}
+
+.navbar-mobile .getstarted:hover {
+  background: var(--deep-purple);
 }
 
 .navbar-mobile .dropdown ul {
@@ -676,11 +689,9 @@ button:hover{
   display: none;
   margin: 10px 20px;
   padding: 10px 0;
-  z-index: 99;
-  opacity: 1;
-  visibility: visible;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  background: var(--surface-color);
+  box-shadow: 0 0 15px rgba(88, 70, 249, 0.1);
+  border-radius: 8px;
 }
 
 .navbar-mobile .dropdown ul li {
@@ -689,28 +700,46 @@ button:hover{
 
 .navbar-mobile .dropdown ul a {
   padding: 10px 20px;
-}
-
-.navbar-mobile .dropdown ul a i {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
-  color: #5846f9;
+.navbar-mobile .dropdown ul li:hover > a {
+  color: var(--accent-color);
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
 
-.breadcrumbs,
-.inner-page {
-  margin: 0; /* Reset default margins */
-  padding: 20px 0; /* Optional: Add padding for consistency */
+/* Animation for mobile menu appearance */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
+.navbar-mobile {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Backdrop overlay */
+.navbar-mobile::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -2661,13 +2690,13 @@ section {
   background: url('/api/placeholder/1920/400') center/cover;
   opacity: 0.1;
 }
-
 .service-card {
   background: var(--surface-color);
   border-radius: 15px;
-  padding: 30px;
-  height: 750px;
-  margin: 20px 0;
+  padding: 20px;
+  height: auto; /* Changed from fixed height */
+  min-height: 600px; /* Minimum height */
+  margin: 15px 0;
   transition: all 0.3s ease;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -2675,7 +2704,6 @@ section {
   flex-direction: column;
   overflow: hidden;
 }
-
 .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 30px rgba(93, 63, 211, 0.2);
