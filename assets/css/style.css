@@ -2629,7 +2629,197 @@ section {
   padding-top: 12rem !important;
 
 }
-
 .blogmain{
   margin-top: 5rem ;
+}
+/* ---------------------------services--------------------------------- */
+.service{
+  background: var(--surface-color);
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 8rem;
+}
+
+
+.services-hero {
+  background: linear-gradient(135deg, var(--deep-purple), var(--soft-purple));
+  padding: 120px 0 60px;
+  color: var(--contrast-color);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/api/placeholder/1920/400') center/cover;
+  opacity: 0.1;
+}
+
+.service-card {
+  background: var(--surface-color);
+  border-radius: 15px;
+  padding: 30px;
+  height: 750px;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(93, 63, 211, 0.2);
+}
+
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.service-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--light-purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  background: var(--deep-purple);
+  color: white;
+}
+
+.service-icon i {
+  font-size: 32px;
+  color: var(--deep-purple);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon i {
+  color: white;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 5px 15px;
+  background: var(--light-purple);
+  color: var(--deep-purple);
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: var(--deep-purple);
+  color: white;
+}
+
+.quote-button {
+  background: linear-gradient(45deg, var(--deep-purple), var(--soft-purple));
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.quote-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(93, 63, 211, 0.3);
+}
+
+.benefits-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.benefits-list li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.benefits-list li:before {
+  content: '✓';
+  color: var(--deep-purple);
+  position: absolute;
+  left: 0;
+}
+.tech-stack {
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--light-purple);
+    color: var(--deep-purple);
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background: var(--deep-purple);
+    color: white;
+}
+
+.quote-button {
+    background: linear-gradient(45deg, var(--deep-purple), var(--soft-purple));
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: auto;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.quote-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(93, 63, 211, 0.3);
+}
+
+.cta-section {
+    background: var(--light-purple);
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-title {
+    color: var(--deep-purple);
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }

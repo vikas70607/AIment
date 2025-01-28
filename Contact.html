@@ -60,8 +60,8 @@
         <ul>
           <li><a class="nav-link scrollto " href="/AIment/">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="/AIment/portfolio-details.html">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="/services.html">Services</a></li>
+          <li><a class="nav-link scrollto " href="/portfolio-details.html">Portfolio</a></li>
           <li><a class="nav-link scrollto " href="blog.html" >Blogs</a>
 
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
@@ -147,7 +147,7 @@
                       </div>
                       <div class="form-navigation">
                           <button type="button" class="btn" id="prevStep2">Previous</button>
-                          <button type="submit" class="btn">Submit Inquiry</button>
+                          <button type="submit" id="submit" class="btn ">Submit Inquiry</button>
                       </div>
                   </div>
               </form>
@@ -241,66 +241,9 @@
       class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('multiStepForm');
-        const step1 = document.getElementById('step1');
-        const step2 = document.getElementById('step2');
-        const nextStep1 = document.getElementById('nextStep1');
-        const prevStep2 = document.getElementById('prevStep2');
-        const progressCircles = document.querySelectorAll('.circle');
-
-        function changeCircle(currentStep) {
-            progressCircles.forEach(circle => {
-                circle.classList.remove('active', 'completed');
-                if (circle.dataset.step < currentStep) {
-                    circle.classList.add('completed');
-                } else if (circle.dataset.step == currentStep) {
-                    circle.classList.add('active');
-                }
-            });
-        }
-
-        nextStep1.addEventListener('click', function() {
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-
-            if (nameInput.value.trim() && emailInput.value.trim()) {
-                step1.classList.remove('active');
-                step2.classList.add('active');
-                changeCircle(2);
-            } else {
-                alert('Please fill in both name and email');
-            }
-        });
-
-        prevStep2.addEventListener('click', function() {
-            step2.classList.remove('active');
-            step1.classList.add('active');
-            changeCircle(1);
-        });
-
-        // Allow clicking on progress circles to navigate
-        progressCircles.forEach(circle => {
-            circle.addEventListener('click', function() {
-                const step = this.dataset.step;
-                if (step == 1) {
-                    step1.classList.add('active');
-                    step2.classList.remove('active');
-                    changeCircle(1);
-                } else if (step == 2) {
-                    step2.classList.add('active');
-                    step1.classList.remove('active');
-                    changeCircle(2);
-                }
-            });
-        });
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Form submitted successfully!');
-        });
-    });
+    
 </script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
