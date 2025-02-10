@@ -88,73 +88,17 @@
   <main class="main ">
  <!-- blogs section  -->
  <div class="container blog-padding">
-    <div class="row g-4">
-        <!-- Blog Card 1 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="blog-card">
-                <img src="/AIment/assets/img/blog/blog1.jpg" alt="Blog Image" class="blog-image">
-                <div class="p-4">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="blog-category">Sorts</span>
-                        <span class="blog-date">Jan 1, 2022</span>
-                    </div>
-                    <h3 class="blog-title">
-                        <a href="#" class="text-decoration-none">Dolorum optio tempore voluptas dignissimos</a>
-                    </h3>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-            </div>
-        </div>
-  
-        <!-- Blog Card 2 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="blog-card">
-                <img src="/AIment/assets/img/blog/blog2.jpg" alt="Blog Image" class="blog-image">
-                <div class="p-4">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="blog-category">Fashion</span>
-                        <span class="blog-date">Jan 1, 2022</span>
-                    </div>
-                    <h3 class="blog-title">
-                        <a href="#" class="text-decoration-none">Nisi magni odit consequatur autem nulla dolorem</a>
-                    </h3>
-                    <p class="text-muted">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                </div>
-            </div>
-        </div>
-  
-        <!-- Blog Card 3 -->
-        <div class="col-lg-4 col-md-6">
-            <div class="blog-card">
-                <img src="/AIment/assets/img/blog/blog3.jpg" alt="Blog Image" class="blog-image">
-                <div class="p-4">
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                        <span class="blog-category">Laws</span>
-                        <span class="blog-date">Jul 5, 2022</span>
-                    </div>
-                    <h3 class="blog-title">
-                        <a href="blog-details.html" class="text-decoration-none">Possimus soluta ut id suscipit soluta</a>
-                    </h3>
-                    <p class="text-muted">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-  
-    <!-- Pagination -->
-    <nav class="mt-5">
-        <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="#"><span>&laquo;</span></a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><span class="page-link">...</span></li>
-            <li class="page-item"><a class="page-link" href="#">10</a></li>
-            <li class="page-item"><a class="page-link" href="#"><span>&raquo;</span></a></li>
-        </ul>
-    </nav>
+  <div class="row g-4" id="blog-container">
+      <!-- Blog posts will be dynamically inserted here -->
   </div>
+
+  <!-- Pagination -->
+  <nav class="mt-5">
+      <ul class="pagination justify-content-center" id="pagination">
+          <!-- Pagination buttons will be dynamically inserted here -->
+      </ul>
+  </nav>
+</div>
     <!-- blog end  -->
 
   </main>
@@ -266,7 +210,94 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
+  <script>
+    const blogs = [
+        { image: "/AIment/assets/img/blog/blog1.jpg", category: "Sports", date: "Jan 1, 2022", title: "Dolorum optio tempore voluptas dignissimos", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
+        { image: "/AIment/assets/img/blog/blog2.jpg", category: "Fashion", date: "Jan 1, 2022", title: "Nisi magni odit consequatur autem nulla dolorem", description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo." },
+        { image: "/AIment/assets/img/blog/blog3.jpg", category: "Laws", date: "Jul 5, 2022", title: "Possimus soluta ut id suscipit soluta", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." },
+        { image: "/AIment/assets/img/blog/blog3.jpg", category: "Laws", date: "Jul 5, 2022", title: "Possimus soluta ut id suscipit soluta", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." },
+        { image: "/AIment/assets/img/blog/blog3.jpg", category: "Laws", date: "Jul 5, 2022", title: "Possimus soluta ut id suscipit soluta", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." },
+        { image: "/AIment/assets/img/blog/blog3.jpg", category: "Laws", date: "Jul 5, 2022", title: "Possimus soluta ut id suscipit soluta", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." },
+        { image: "/AIment/assets/img/blog/blog3.jpg", category: "Laws", date: "Jul 5, 2022", title: "Possimus soluta ut id suscipit soluta", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." },
+        { image: "/AIment/assets/img/blog/blog3.jpg", category: "Laws", date: "Jul 5, 2022", title: "Possimus soluta ut id suscipit soluta", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." },
+        { image: "/AIment/assets/img/blog/blog3.jpg", category: "Laws", date: "Jul 5, 2022", title: "Possimus soluta ut id suscipit soluta", description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." },
+        { image: "/AIment/assets/img/blog/blog4.jpg", category: "Tech", date: "Aug 10, 2022", title: "Tech Innovations in 2023", description: "Exploring the latest advancements in the tech world and how they impact our daily lives." },
+        { image: "/AIment/assets/img/blog/blog5.jpg", category: "Health", date: "Sep 15, 2022", title: "Healthy Living Tips", description: "How to maintain a healthy lifestyle with simple daily habits and proper diet." },
+        { image: "/AIment/assets/img/blog/blog6.jpg", category: "Travel", date: "Oct 20, 2022", title: "Top 10 Destinations to Visit", description: "A list of the most breathtaking travel spots around the world for your next trip." }
+    ];
 
+    const blogsPerPage = 3;
+    let currentPage = 1;
+
+    function displayBlogs(page) {
+    const start = (page - 1) * blogsPerPage;
+    const end = start + blogsPerPage;
+    const paginatedBlogs = blogs.slice(start, end);
+
+    const blogContainer = document.getElementById("blog-container");
+    blogContainer.innerHTML = ""; // Clear previous content without flickering
+
+    const fragment = document.createDocumentFragment(); // Prevents reflows
+
+    paginatedBlogs.forEach(blog => {
+        const blogCol = document.createElement("div");
+        blogCol.className = "col-lg-4 col-md-6";
+
+        blogCol.innerHTML = `
+            <div class="blog-card">
+                <img src="${blog.image}" alt="Blog Image" class="blog-image">
+                <div class="p-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="blog-category">${blog.category}</span>
+                        <span class="blog-date">${blog.date}</span>
+                    </div>
+                    <h3 class="blog-title">
+                        <a href="#" class="text-decoration-none">${blog.title}</a>
+                    </h3>
+                    <p class="text-muted">${blog.description}</p>
+                </div>
+            </div>
+        `;
+
+        fragment.appendChild(blogCol);
+    });
+
+    blogContainer.appendChild(fragment); // Append all at once (prevents flicker)
+
+    setupPagination();
+}
+    function setupPagination() {
+        const totalPages = Math.ceil(blogs.length / blogsPerPage);
+        const paginationContainer = document.getElementById("pagination");
+        paginationContainer.innerHTML = "";
+
+        paginationContainer.innerHTML += `<li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+            <a class="page-link" onclick="changePage(${currentPage - 1})">&laquo;</a>
+        </li>`;
+
+        for (let i = 1; i <= totalPages; i++) {
+            paginationContainer.innerHTML += `<li class="page-item ${currentPage === i ? 'active' : ''}">
+                <a class="page-link" onclick="changePage(${i})">${i}</a>
+            </li>`;
+        }
+
+        paginationContainer.innerHTML += `<li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+            <a class="page-link"  onclick="changePage(${currentPage + 1})">&raquo;</a>
+        </li>`;
+    }
+
+    function changePage(page) {
+        const totalPages = Math.ceil(blogs.length / blogsPerPage);
+        if (page < 1 || page > totalPages) return;
+        currentPage = page;
+        displayBlogs(currentPage);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        displayBlogs(currentPage);
+    });
+
+</script>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
