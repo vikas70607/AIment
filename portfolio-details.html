@@ -22,45 +22,20 @@
 
 <body>
   <!-- Header -->
-  <header id="header" class="fixed-top header-scrolle header-in  ">
-    <div class="container  d-flex align-items-center justify-content-between">
-      <!-- <h1 class="logo"><a href="index.html">AIment</a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
+  <header id="header" class="fixed-top header-scrolle header-in">
+    <div class="container d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto " href="#services">Services</a></li>
-          <li><a class="nav-link scrollto active " href="portfolio.html">Portfolio</a></li>
-          <!-- <li><a class="nav-link scrollto  " href="blog.html" >Blogs</a> -->
-
-          <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto active" href="portfolio.html">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="Contact.html">Contact</a></li>
           <li><a class="getstarted scrollto" href="/Contact.html">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      </nav>
     </div>
   </header><!-- End Header -->
 
@@ -115,49 +90,126 @@
   <!-- Portfolio Data and Logic -->
   <script>
     // Portfolio items database
-    const portfolioData = {
-      'real-estate-chatbot': {
-        title: 'Real Estate Qualification Chatbot',
-        category: 'AI Chatbots',
-        client: 'Leading Real Estate Agency',
-        date: 'January 2024',
-        impact: '35% boost in client conversions',
-        images: [
-          'assets/img/portfolio/portfolio-1.jpg',
-          'assets/img/portfolio/portfolio-details-1.jpg',
-          'assets/img/portfolio/portfolio-2.jpg'
-        ],
-        description: 'Our Real Estate Qualification Chatbot revolutionized property inquiry handling. This AI-powered solution pre-qualifies leads, schedules viewings, and provides instant property information, resulting in a 35% increase in qualified leads and significant time savings for agents.'
-      },
-      'text-to-charts': {
-        title: 'Text-to-Charts AI System',
-        category: 'Custom AI Solutions',
-        client: 'Data Analytics Firm',
-        date: 'December 2023',
-        impact: 'Automated data visualization process',
-        images: [
-          'assets/img/portfolio/portfolio-details-1.jpg',
-          'assets/img/portfolio/portfolio-2.jpg',
-          'assets/img/portfolio/portfolio-3.jpg'
-        ],
-        description: 'An innovative AI system that transforms natural language descriptions into professional charts and visualizations. The system understands context, selects appropriate chart types, and generates visually appealing data representations automatically.'
-      },
-      'web3-onboarding': {
-        title: 'Web3 Community Onboarding Bot',
-        category: 'AI Chatbots',
-        client: 'Blockchain Platform',
-        date: 'February 2024',
-        impact: '50% reduction in admin workload',
-        images: [
-          'assets/img/portfolio/portfolio-2.jpg',
-          'assets/img/portfolio/portfolio-3.jpg',
-          'assets/img/portfolio/portfolio-4.jpg'
-        ],
-        description: 'A sophisticated chatbot designed to streamline the Web3 community onboarding process. It handles user verification, provides educational resources, and manages community access, reducing administrative overhead by 50%.'
-      }
-      // Add more portfolio items here
-    };
-
+   // Portfolio items database
+const portfolioData = {
+  'real-estate-chatbot': {
+    title: 'Real Estate Qualification Chatbot',
+    category: 'AI Chatbots',
+    client: 'Leading Real Estate Agency',
+    date: 'January 2024',
+    impact: '35% boost in client conversions',
+    images: [
+      'assets/img/portfolio/portfolio-1.jpg',
+      'assets/img/portfolio/portfolio-details-1.jpg',
+      'assets/img/portfolio/portfolio-2.jpg'
+    ],
+    description: 'Our Real Estate Qualification Chatbot revolutionized property inquiry handling. This AI-powered solution pre-qualifies leads, schedules viewings, and provides instant property information, resulting in a 35% increase in qualified leads and significant time savings for agents.'
+  },
+  'text-to-charts': {
+    title: 'Text-to-Charts AI System',
+    category: 'Custom AI Solutions',
+    client: 'Data Analytics Firm',
+    date: 'December 2023',
+    impact: 'Automated data visualization process',
+    images: [
+      'assets/img/portfolio/portfolio-details-1.jpg',
+      'assets/img/portfolio/portfolio-2.jpg',
+      'assets/img/portfolio/portfolio-3.jpg'
+    ],
+    description: 'An innovative AI system that transforms natural language descriptions into professional charts and visualizations. The system understands context, selects appropriate chart types, and generates visually appealing data representations automatically.'
+  },
+  'web3-onboarding': {
+    title: 'Web3 Community Onboarding Bot',
+    category: 'AI Chatbots',
+    client: 'Blockchain Platform',
+    date: 'February 2024',
+    impact: '50% reduction in admin workload',
+    images: [
+      'assets/img/portfolio/portfolio-2.jpg',
+      'assets/img/portfolio/portfolio-3.jpg',
+      'assets/img/portfolio/portfolio-4.jpg'
+    ],
+    description: 'A sophisticated chatbot designed to streamline the Web3 community onboarding process. It handles user verification, provides educational resources, and manages community access, reducing administrative overhead by 50%.'
+  },
+  'video-brochure-bot': {
+    title: 'Video Brochure Pricing Bot',
+    category: 'Process Automation',
+    client: 'Media Production Company',
+    date: 'March 2024',
+    impact: '70% reduction in manual pricing queries',
+    images: [
+      'assets/img/portfolio/portfolio-4.jpg',
+      'assets/img/portfolio/portfolio-5.jpg',
+      'assets/img/portfolio/portfolio-6.jpg'
+    ],
+    description: 'An AI-powered pricing solution that automates quote generation for video brochure services, integrating with CRM systems to provide instant, accurate quotes based on project parameters.'
+  },
+  'knowledge-base-assistant': {
+    title: 'Knowledge Base AI Assistant',
+    category: 'Custom AI Solutions',
+    client: 'Technology Consultancy',
+    date: 'April 2024',
+    impact: 'Enhanced internal knowledge access',
+    images: [
+      'assets/img/portfolio/portfolio-5.jpg',
+      'assets/img/portfolio/portfolio-6.jpg',
+      'assets/img/portfolio/portfolio-7.jpg'
+    ],
+    description: 'A smart assistant that uses natural language processing to help employees quickly find information across multiple knowledge repositories, reducing search time by 60%.'
+  },
+  'ecommerce-chatbot': {
+    title: 'E-commerce Support Chatbot',
+    category: 'AI Chatbots',
+    client: 'Online Retailer',
+    date: 'May 2024',
+    impact: '40% reduction in support tickets',
+    images: [
+      'assets/img/portfolio/portfolio-6.jpg',
+      'assets/img/portfolio/portfolio-7.jpg',
+      'assets/img/portfolio/portfolio-8.jpg'
+    ],
+    description: 'A 24/7 customer support chatbot that handles order tracking, returns, and product inquiries, integrating with backend systems for real-time updates.'
+  },
+  'sql-query-generator': {
+    title: 'SQL Query Generator',
+    category: 'Process Automation',
+    client: 'Financial Services Firm',
+    date: 'June 2024',
+    impact: 'Natural language to SQL automation',
+    images: [
+      'assets/img/portfolio/portfolio-7.jpg',
+      'assets/img/portfolio/portfolio-8.jpg',
+      'assets/img/portfolio/portfolio-9.jpg'
+    ],
+    description: 'Converts plain English questions into optimized SQL queries, enabling non-technical users to access database insights directly.'
+  },
+  'workflow-automation': {
+    title: 'Workflow Automation System',
+    category: 'Process Automation',
+    client: 'Healthcare Provider',
+    date: 'July 2024',
+    impact: '1000+ daily tasks automated',
+    images: [
+      'assets/img/portfolio/portfolio-8.jpg',
+      'assets/img/portfolio/portfolio-9.jpg',
+      'assets/img/portfolio/portfolio-1.jpg'
+    ],
+    description: 'Automated complex document processing workflows, reducing manual data entry and improving processing speed by 80%.'
+  },
+  'lead-data-enrichment': {
+    title: 'Lead Data Enrichment Tool',
+    category: 'Custom AI Solutions',
+    client: 'Marketing Agency',
+    date: 'August 2024',
+    impact: '50% increase in lead quality',
+    images: [
+      'assets/img/portfolio/portfolio-9.jpg',
+      'assets/img/portfolio/portfolio-1.jpg',
+      'assets/img/portfolio/portfolio-2.jpg'
+    ],
+    description: 'AI-driven tool that automatically enriches lead data with social profiles, company info, and intent signals, improving sales team efficiency.'
+  }
+};
     // Function to get portfolio ID from URL
     function getPortfolioId() {
       const urlParams = new URLSearchParams(window.location.search);
