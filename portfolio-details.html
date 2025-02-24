@@ -129,8 +129,146 @@
           'assets/img/portfolio/portfolio-4.jpg'
         ],
         description: 'A sophisticated chatbot designed to streamline the Web3 community onboarding process. It handles user verification, provides educational resources, and manages community access, reducing administrative overhead by 50%.'
-      }
-      // Add more portfolio items here
+      },
+      'web3-onboarding': {
+    title: 'Web3 Community Onboarding Bot',
+    category: 'AI Chatbots',
+    client: 'Blockchain Platform',
+    date: 'February 2024',
+    impact: '50% reduction in admin workload',
+    images: [
+      'assets/img/portfolio/portfolio-2.jpg',
+      'assets/img/portfolio/portfolio-3.jpg',
+      'assets/img/portfolio/portfolio-4.jpg'
+    ],
+    description: 'A sophisticated chatbot designed to streamline the Web3 community onboarding process. It handles user verification, provides educational resources, and manages community access, reducing administrative overhead by 50%.',
+    techStack: ['Node.js', 'Solidity', 'Web3.js', 'AI Chat Framework'],
+    results: [
+      '50% faster onboarding process',
+      'Automated KYC verification',
+      '24/7 community support'
+    ]
+  },
+
+  'video-brochure-bot': {
+    title: 'Video Brochure Pricing Bot',
+    category: 'Process Automation',
+    client: 'Marketing Agency',
+    date: 'March 2024',
+    impact: '70% reduction in manual pricing queries',
+    images: [
+      'assets/img/portfolio/portfolio-4.jpg',
+      'assets/img/portfolio/portfolio-5.jpg',
+      'assets/img/portfolio/portfolio-6.jpg'
+    ],
+    description: 'An AI-powered bot that automates pricing inquiries for video brochure services. It provides instant quotes, handles customer questions, and integrates with CRM systems for seamless lead management.',
+    techStack: ['Python', 'Flask', 'OpenAI API', 'CRM Integration'],
+    results: [
+      '70% reduction in manual queries',
+      'Instant pricing calculations',
+      'Improved customer satisfaction'
+    ]
+  },
+
+  'knowledge-base-assistant': {
+    title: 'Knowledge Base AI Assistant',
+    category: 'Custom AI Solutions',
+    client: 'Enterprise Client',
+    date: 'April 2024',
+    impact: 'Enhanced internal knowledge access',
+    images: [
+      'assets/img/portfolio/portfolio-5.jpg',
+      'assets/img/portfolio/portfolio-6.jpg',
+      'assets/img/portfolio/portfolio-7.jpg'
+    ],
+    description: 'A custom AI assistant that helps employees quickly find information from the company’s knowledge base. It uses natural language processing to understand queries and provides accurate, context-aware responses.',
+    techStack: ['NLP', 'Elasticsearch', 'React', 'Python'],
+    results: [
+      '90% faster information retrieval',
+      'Reduced dependency on manual searches',
+      'Improved employee productivity'
+    ]
+  },
+
+  'ecommerce-chatbot': {
+    title: 'E-commerce Support Chatbot',
+    category: 'AI Chatbots',
+    client: 'Online Retailer',
+    date: 'May 2024',
+    impact: '40% reduction in support tickets',
+    images: [
+      'assets/img/portfolio/portfolio-6.jpg',
+      'assets/img/portfolio/portfolio-7.jpg',
+      'assets/img/portfolio/portfolio-8.jpg'
+    ],
+    description: 'An AI chatbot for e-commerce platforms that handles customer inquiries, tracks orders, and provides product recommendations. It integrates with the retailer’s backend systems for real-time updates.',
+    techStack: ['Dialogflow', 'Node.js', 'E-commerce API', 'Redis'],
+    results: [
+      '40% reduction in support tickets',
+      '24/7 customer support',
+      'Increased cross-selling opportunities'
+    ]
+  },
+
+  'sql-query-generator': {
+    title: 'SQL Query Generator',
+    category: 'Process Automation',
+    client: 'Data Analytics Firm',
+    date: 'June 2024',
+    impact: 'Natural language to SQL automation',
+    images: [
+      'assets/img/portfolio/portfolio-7.jpg',
+      'assets/img/portfolio/portfolio-8.jpg',
+      'assets/img/portfolio/portfolio-9.jpg'
+    ],
+    description: 'A tool that converts natural language queries into SQL commands. It simplifies database interactions for non-technical users and reduces errors in query generation.',
+    techStack: ['Python', 'NLP', 'SQLAlchemy', 'React'],
+    results: [
+      '80% faster query generation',
+      'Reduced dependency on SQL experts',
+      'Improved data accessibility'
+    ]
+  },
+
+  'workflow-automation': {
+    title: 'Workflow Automation System',
+    category: 'Process Automation',
+    client: 'Enterprise Client',
+    date: 'July 2024',
+    impact: '1000+ daily tasks automated',
+    images: [
+      'assets/img/portfolio/portfolio-8.jpg',
+      'assets/img/portfolio/portfolio-9.jpg',
+      'assets/img/portfolio/portfolio-1.jpg'
+    ],
+    description: 'A comprehensive workflow automation system that handles repetitive tasks across multiple departments. It integrates with existing tools and provides real-time monitoring and reporting.',
+    techStack: ['Python', 'Zapier Integration', 'REST APIs', 'Docker'],
+    results: [
+      '1000+ tasks automated daily',
+      '50% reduction in manual work',
+      'Improved process efficiency'
+    ]
+  },
+
+  'lead-data-enrichment': {
+    title: 'Lead Data Enrichment Tool',
+    category: 'Custom AI Solutions',
+    client: 'Sales Organization',
+    date: 'August 2024',
+    impact: '50% increase in lead quality',
+    images: [
+      'assets/img/portfolio/portfolio-9.jpg',
+      'assets/img/portfolio/portfolio-1.jpg',
+      'assets/img/portfolio/portfolio-2.jpg'
+    ],
+    description: 'An AI-powered tool that enriches lead data by automatically gathering additional information from public sources. It improves lead scoring and helps sales teams prioritize high-value prospects.',
+    techStack: ['Python', 'Web Scraping', 'Machine Learning', 'CRM Integration'],
+    results: [
+      '50% increase in lead quality',
+      'Automated data enrichment',
+      'Improved sales conversion rates'
+    ]
+  }
     };
 
     // Function to get portfolio ID from URL
@@ -165,8 +303,12 @@
       // Load images
       const portfolioImages = document.getElementById('portfolio-images');
       portfolioImages.innerHTML = project.images.map(img => `
-        <div class="swiper-slide">
-          <img src="${img}" alt="${project.title}">
+        <div class="swiper-slide rounded "
+        >
+          <img
+        style="border-radius: 20px;"
+          
+          src="${img}" alt="${project.title}">
         </div>
       `).join('');
 
