@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const progressCircles = document.querySelectorAll('.circle');
     const submit = document.getElementById('submit');
 
-    // Function to update the progress circles
     function changeCircle(currentStep) {
         progressCircles.forEach(circle => {
             circle.classList.remove('active', 'completed');
@@ -19,12 +18,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Move to Step 2
     nextStep1.addEventListener('click', function () {
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email');
 
-        // Validate inputs in Step 1
         if (nameInput.value.trim() && emailInput.value.trim()) {
             step1.classList.remove('active');
             step2.classList.add('active');
@@ -34,14 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Move back to Step 1
     prevStep2.addEventListener('click', function () {
         step2.classList.remove('active');
         step1.classList.add('active');
         changeCircle(1);
     });
 
-    // Allow navigation via progress circles
     progressCircles.forEach(circle => {
         circle.addEventListener('click', function () {
             const step = this.dataset.step;
@@ -56,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
     submit.addEventListener('click', async function (e) {
         e.preventDefault(); 
         const name = document.getElementById('name').value.trim();
@@ -63,39 +59,52 @@ document.addEventListener('DOMContentLoaded', function () {
         const budget = document.getElementById('budget').value.trim();
         const project = document.getElementById('project').value.trim();
         const fileInput = document.getElementById('file');
-        console.log({
-            name,
-            email,
-            budget,
-            project,
-            file: fileInput.files[0]
-        })
-        if (name && email && budget && project ) {
+        
+        if (name && email && budget && project) {
             const formData = new FormData();
             formData.append('Name', name);
             formData.append('Email', email);
             formData.append('Budget', budget);
             formData.append('Desc', project);
-            formData.append('Files', fileInput.files[0]);
-            console.log("formData", formData);
+    
+            // Only append the file if one was selected
+            if (fileInput.files.length > 0) {
+                formData.append('Files', fileInput.files[0], fileInput.files[0].name);
+            }
+    
             try {
                 const response = await fetch('https://hook.eu2.make.com/t6f6mn2kvdvue83acao47cfinn2va269', {
                     method: 'POST',
-                    body: formData 
+                    body: formData
+                    // Don't set Content-Type header, browser will set it automatically with boundary
                 });
-
+                console.log('Response:', response);
                 if (response.ok) {
-                    const result = await response.json();
-                    console.log('Response:', result);
-                    alert('Form submitted successfully!');
+                    try {
+                        const result = await response.json();
+                        console.log('Response:', result);
+                        alert('Form submitted successfully!');
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 3000);
+                    } catch (jsonError) {
+                        // Handle case where response is not JSON
+                        console.log('Response received but not JSON format');
+                        alert('Form submitted successfully!');
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 3000);
+                    }
                 } else {
-                    console.error('Error response:', response);
+                    console.error('Error response:', response.status, response.statusText);
                     alert('Failed to submit the form. Please try again.');
                 }
             } catch (error) {
                 console.error('Error submitting form:', error);
                 alert('An error occurred while submitting the form.');
             }
-        } 
+        } else {
+            alert('Please fill in all required fields.');
+        }
     });
 });
