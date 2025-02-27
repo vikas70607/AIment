@@ -56,25 +56,28 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
-    // Handle form submission
     submit.addEventListener('click', async function (e) {
-        e.preventDefault(); // Prevent the default form submission
-
+        e.preventDefault(); 
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const budget = document.getElementById('budget').value.trim();
         const project = document.getElementById('project').value.trim();
         const fileInput = document.getElementById('file');
-
-        if (name && email && budget && project && fileInput.files[0]) {
+        console.log({
+            name,
+            email,
+            budget,
+            project,
+            file: fileInput.files[0]
+        })
+        if (name && email && budget && project ) {
             const formData = new FormData();
             formData.append('Name', name);
             formData.append('Email', email);
             formData.append('Budget', budget);
             formData.append('Desc', project);
             formData.append('Files', fileInput.files[0]);
-
+            console.log("formData", formData);
             try {
                 const response = await fetch('https://hook.eu2.make.com/t6f6mn2kvdvue83acao47cfinn2va269', {
                     method: 'POST',
@@ -93,8 +96,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.error('Error submitting form:', error);
                 alert('An error occurred while submitting the form.');
             }
-        } else {
-            alert('Please fill in all fields and upload a file.');
-        }
+        } 
     });
 });
