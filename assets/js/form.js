@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
     
             try {
-                const response = await fetch('https://hook.eu2.make.com/t6f6mn2kvdvue83acao47cfinn2va269', {
+                const response = await fetch('https://hook.eu2.make.com/s2xfay5sq2ul5kzf9vg3wv6je7bahww1', {
                     method: 'POST',
                     body: formData
                     // Don't set Content-Type header, browser will set it automatically with boundary
